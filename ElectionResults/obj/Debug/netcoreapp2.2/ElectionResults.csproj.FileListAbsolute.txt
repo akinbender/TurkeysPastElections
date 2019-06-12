@@ -1,7 +1,6 @@
 C:\Github\TurkeysPastElections\ElectionResults\bin\Debug\netcoreapp2.2\ElectionResults.deps.json
 C:\Github\TurkeysPastElections\ElectionResults\bin\Debug\netcoreapp2.2\ElectionResults.dll
 C:\Github\TurkeysPastElections\ElectionResults\bin\Debug\netcoreapp2.2\ElectionResults.pdb
-C:\Github\TurkeysPastElections\ElectionResults\obj\Debug\netcoreapp2.2\ElectionResults.csprojAssemblyReference.cache
 C:\Github\TurkeysPastElections\ElectionResults\obj\Debug\netcoreapp2.2\ElectionResults.csproj.CoreCompileInputs.cache
 C:\Github\TurkeysPastElections\ElectionResults\obj\Debug\netcoreapp2.2\ElectionResults.AssemblyInfoInputs.cache
 C:\Github\TurkeysPastElections\ElectionResults\obj\Debug\netcoreapp2.2\ElectionResults.AssemblyInfo.cs

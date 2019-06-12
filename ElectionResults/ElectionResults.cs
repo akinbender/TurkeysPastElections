@@ -37,38 +37,54 @@ namespace ElectionResults
                 };
                 foreach (var election in electionList)
                 {
-                    election.Participants = participants;
+                    List<Participant> participantsToAdd = new List<Participant>();
                     if (election.Date == new DateTime(2018, 6, 24))
                     {
-                        participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 42.56d, 295);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 22.65d, 146);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 11.70d, 67);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 11.10d, 49);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Ip).AssignPartyToElection(election, 9.96d, 43);
+                        participantsToAdd.AddRange(new List<Participant>
+                        {
+                            participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 42.56d, 295),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 22.65d, 146),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 11.70d, 67),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 11.10d, 49),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Ip).AssignPartyToElection(election, 9.96d, 43)
+                        });
+
 
                     }
                     else if (election.Date == new DateTime(2015, 11, 1))
                     {
-                        participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 49.5d, 317);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 25.3d, 134);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 10.7d, 59);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 11.9d, 40);
+                        participantsToAdd.AddRange(new List<Participant>
+                        {
+                            participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 49.5d, 317),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 25.3d, 134),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 10.7d, 59),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 11.9d, 40)
+                        });
                     }
                     else if (election.Date == new DateTime(2015, 6, 7))
                     {
-                        participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 40.8d, 258);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 24.9d, 132);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 13.1d, 80);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 16.2d, 80);
+                        participantsToAdd.AddRange(new List<Participant>
+                        {
+                            participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 40.8d, 258),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 24.9d, 132),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Hdp).AssignPartyToElection(election, 13.1d, 80),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 16.2d, 80)
+                        });
                     }
                     else if (election.Date == new DateTime(2011, 6, 12))
                     {
-                        participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 49.8d, 327);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 25.9d, 135);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 13d, 53);
-                        participants.First(a => a.Party == Participant.PoliticalParty.Independent).AssignPartyToElection(election, 6.6d, 35);
+                        participantsToAdd.AddRange(new List<Participant>
+                        {
+                            participants.First(a => a.Party == Participant.PoliticalParty.Akp).AssignPartyToElection(election, 49.8d, 327),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Chp).AssignPartyToElection(election, 25.9d, 135),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Mhp).AssignPartyToElection(election, 13d, 53),
+                            participants.First(a => a.Party == Participant.PoliticalParty.Independent).AssignPartyToElection(election, 6.6d, 35)
+                        });
                     }
+
+                    election.Participants = participantsToAdd;
                 }
+                
                 return electionList;
             }
         }

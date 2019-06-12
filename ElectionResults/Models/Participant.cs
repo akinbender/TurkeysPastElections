@@ -43,7 +43,7 @@ namespace ElectionResults.Models
 
     public static class ParticipantExtensions
     {
-        public static void AssignPartyToElection(this Participant participant, Election election, double votingRate,
+        public static Participant AssignPartyToElection(this Participant participant, Election election, double votingRate,
             int chairCount)
         {
             if (participant.Results == null)
@@ -52,7 +52,6 @@ namespace ElectionResults.Models
                 {
                     new Tuple<DateTime, double, int>(election.Date, votingRate, chairCount)
                 };
-                return;
             }
             else
             {
@@ -60,6 +59,8 @@ namespace ElectionResults.Models
                 a.Add(new Tuple<DateTime, double, int>(election.Date, votingRate, chairCount));
                 participant.Results = a;
             }
+
+            return participant;
         }
     }
 
